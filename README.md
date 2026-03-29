@@ -52,6 +52,87 @@
 
 ---
 
+## 🖥️ 화면 구성
+
+### 1. 메인 화면 — Cafe24 모드
+
+![Cafe24 메인](docs/screenshots/01_main_cafe24.png)
+
+사이드바에서 플랫폼(Cafe24 / 스마트스토어), 브랜드명, 상품명, 카테고리를 입력해요.
+HTML 소스는 URL 직접 입력 또는 붙여넣기 두 가지 방식으로 받아요.
+
+---
+
+### 2. 최적화 결과 — 변경사항 비교 탭
+
+![변경사항 비교](docs/screenshots/02_result_compare.png)
+
+수정 전 / 후를 나란히 보여줘요.
+- title, meta description, alt 없는 이미지 수, JSON-LD 삽입 여부 확인
+- 기존 heading 구조도 텍스트로 표시
+
+---
+
+### 3. 메타 태그 탭
+
+![메타 태그](docs/screenshots/03_meta_tags.png)
+
+복사해서 바로 쓸 수 있는 형태로 태그를 뽑아줘요.
+- `<title>`, `<meta description>`, Open Graph 태그
+- JSON-LD 구조화 데이터 (JSON 형식)
+
+---
+
+### 4. GEO 콘텐츠 탭
+
+![GEO 콘텐츠](docs/screenshots/04_geo_content.png)
+
+ChatGPT·Gemini 크롤러가 참조하기 좋은 자연어 설명문이에요.
+HTML body 최상단에 `display:none` 숨김 div로 자동 삽입돼요.
+
+---
+
+### 5. Cafe24 항목별 입력 가이드 탭
+
+![입력 가이드](docs/screenshots/05_download_guide.png)
+
+Cafe24 에디터 구조에 맞춰 항목별로 어디에 넣어야 하는지 가이드와 함께 제공해요.
+- SEO 설정 메뉴 입력값 (title, description, OG 태그)
+- JSON-LD 삽입 위치 안내 (`</head>` 위)
+- GEO 설명문 삽입 방법
+- 이미지별 alt 텍스트 목록
+
+---
+
+### 6. 스마트스토어 모드
+
+![스마트스토어](docs/screenshots/06_smartstore.png)
+
+HTML 접근 없이 텍스트 입력만으로 최적화해요.
+현재 상품 설명을 붙여넣으면 더 정확한 결과가 나와요.
+
+---
+
+### 7. 스마트스토어 결과 — 상품명·태그 탭
+
+![스마트스토어 결과](docs/screenshots/07_smartstore_result.png)
+
+- 수정 전/후 상품명 나란히 비교
+- 네이버 검색 태그 10개 (칩 형태 표시)
+- 핵심 검색 키워드 5개
+- 엑셀 리포트 다운로드
+
+---
+
+### 8. GEO 테스트 탭
+
+![GEO 테스트](docs/screenshots/08_geo_test.png)
+
+세팅 후 AI 검색 노출을 직접 확인할 수 있는 쿼리를 단계별로 제공해요.
+ChatGPT / Gemini / Perplexity 버튼 클릭 한 번으로 바로 테스트 가능해요.
+
+---
+
 ## 🤔 개발 과정에서 고민한 것들
 
 ### 1. Azure vs Google 무료 티어
