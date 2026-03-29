@@ -7,11 +7,15 @@ def inject(raw_html: str, optimized: dict, parsed: dict) -> str:
     최적화 수정안을 원본 HTML에 주입.
     반환값: 수정된 HTML 문자열
     """
-    soup = BeautifulSoup(raw_html, "lxml")
+    soup = BeautifulSoup(raw_html, "html.parser")
     head = soup.find("head")
     if not head:
         head = soup.new_tag("head")
-        soup.html.insert(0, head)
+        html_tag = soup.find("html")
+        if html_tag:
+            html_tag.insert(0, head)
+        else:
+            soup.insert(0, head)
 
     # 1. title 수정
     title_tag = soup.find("title")

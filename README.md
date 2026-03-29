@@ -116,8 +116,8 @@ python-dotenv           — 환경변수 관리
 
 ### 1. 저장소 클론
 ```bash
-git clone https://github.com/YOUR_USERNAME/seo-geo-ai.git
-cd seo-geo-ai
+git clone https://github.com/jimena1lee/ai-seo-geo-miniproject.git
+cd ai-SEO-GEO-miniproject
 ```
 
 ### 2. 패키지 설치
@@ -152,7 +152,7 @@ streamlit run app.py
 ## 📁 프로젝트 구조
 
 ```
-seo-geo-ai/
+ai-SEO-GEO-miniproject/
 ├── .env                  # API 키 (gitignore 처리됨)
 ├── .env.example          # 환경변수 템플릿
 ├── .gitignore
@@ -183,7 +183,7 @@ seo-geo-ai/
 
 - `.env` 파일은 절대 GitHub에 올리지 마세요 (`.gitignore`에 포함됨)
 - Azure OpenAI는 사용량에 따라 과금돼요. 테스트 시 크레딧 소진에 주의하세요
-- 스마트스토어 URL 크롤링은 봇 차단으로 동작하지 않아요. HTML 붙여넣기를 이용하세요
+- 스마트스토어 URL 크롤링은 봇 차단으로 동작하지 않아요. 상품명·설명 텍스트 직접 입력 방식을 이용하세요
 - GEO 효과는 크롤링 주기(수일~수주)가 있어 즉시 반영되지 않아요
 
 ---
