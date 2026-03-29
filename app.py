@@ -28,7 +28,7 @@ with st.sidebar:
     )
     product_url = st.text_input("상품 URL (선택)", placeholder="https://...")
     st.divider()
-    st.caption("Azure OpenAI GPT-4.1 기반")
+    st.caption("Azure OpenAI GPT-4o 기반")
 
 # ───────────────────────────────
 # Cafe24 모드
@@ -102,7 +102,11 @@ if platform == "Cafe24":
             st.info("Cafe24 상세이미지 영역을 자동 감지하지 못했어요. 전체 HTML 기준으로 최적화합니다.")
 
         with st.spinner("GPT-4o로 SEO/GEO 최적화 중..."):
-            optimized = optimize(parsed, product_name, category, brand_name)
+            try:
+                optimized = optimize(parsed, product_name, category, brand_name)
+            except ValueError as e:
+                st.error(str(e))
+                st.stop()
 
         with st.spinner("HTML에 적용 중..."):
             final_html = inject(raw_html, optimized, parsed)
@@ -306,7 +310,11 @@ else:
             st.stop()
 
         with st.spinner("GPT-4o로 스마트스토어 최적화 중..."):
-            ss_result = optimize_smartstore(product_name, category, brand_name, product_desc)
+            try:
+                ss_result = optimize_smartstore(product_name, category, brand_name, product_desc)
+            except ValueError as e:
+                st.error(str(e))
+                st.stop()
 
         st.success("최적화 완료!")
         st.divider()

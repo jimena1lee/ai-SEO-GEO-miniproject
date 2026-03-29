@@ -83,11 +83,15 @@ def optimize(parsed: dict, product_name: str, category: str, brand_name: str) ->
 
     raw = response.choices[0].message.content.strip()
     if "```" in raw:
-        raw = raw.split("```")[1]
+        parts = raw.split("```")
+        raw = parts[1] if len(parts) > 1 else parts[0]
         if raw.startswith("json"):
             raw = raw[4:]
 
-    return json.loads(raw.strip())
+    try:
+        return json.loads(raw.strip())
+    except json.JSONDecodeError as e:
+        raise ValueError(f"GPT 응답을 JSON으로 파싱할 수 없어요: {e}\n\n응답 내용:\n{raw[:300]}")
 
 
 def optimize_smartstore(product_name: str, category: str, brand_name: str, product_desc: str) -> dict:
@@ -131,8 +135,12 @@ def optimize_smartstore(product_name: str, category: str, brand_name: str, produ
 
     raw = response.choices[0].message.content.strip()
     if "```" in raw:
-        raw = raw.split("```")[1]
+        parts = raw.split("```")
+        raw = parts[1] if len(parts) > 1 else parts[0]
         if raw.startswith("json"):
             raw = raw[4:]
 
-    return json.loads(raw.strip())
+    try:
+        return json.loads(raw.strip())
+    except json.JSONDecodeError as e:
+        raise ValueError(f"GPT 응답을 JSON으로 파싱할 수 없어요: {e}\n\n응답 내용:\n{raw[:300]}")
